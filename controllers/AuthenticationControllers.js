@@ -1,6 +1,6 @@
 exports.login = (req, res) => {
     const { username, password } = req.body;
-    if (!username, !password) return res.status(400).redirect('/error');
+    if (!username, !password) return res.status(400).send('error');
     if (username == "admin" && password == "Web999") {     
         req.session.isLoggedIn = true;          
         res.redirect("/");   
